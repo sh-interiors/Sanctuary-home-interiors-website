@@ -6,7 +6,6 @@
   "name": "harry",
   "version": "1.0.0",
 
-  // ✅ FIXED: Corrected entry point
   "main": "server.js",
 
   "scripts": {
