@@ -4,17 +4,14 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = process.env.PORT || 5148;
+const PORT = 5148; // change if needed
 
-// ✅ Changed this line: serve current directory instead of "harry"
-app.use(express.static(path.join(__dirname)));
+// Serve static files (adjust folder name if not "harry")
+app.use(express.static(path.join(__dirname, 'harry')));
 
+// Parse form data & JSON
 app.use(bodyParser.urlencoded({ extended: false }));
-
-// ✅ NEW: Serve index.html on GET /
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+app.use(bodyParser.json()); // <-- added
 
 // Contact form endpoint
 app.post('/contact', async (req, res) => {
@@ -23,8 +20,8 @@ app.post('/contact', async (req, res) => {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'homeinteriorssanctuary@gmail.com',
-      pass: 'drdujneoyczesitk'
+      user: 'homeinteriorssanctuary@gmail.com', // replace with your email
+      pass: 'drdujneoyczesitk' // replace with app password
     }
   });
 
@@ -37,9 +34,10 @@ app.post('/contact', async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.send(`<script>alert('Thank you! Your message has been sent.');window.location.href='/'</script>`);
+    res.json({ success: true, message: 'Thank you! Your message has been sent.' }); // <-- return JSON
   } catch (error) {
-    res.send(`<script>alert('Sorry, there was an error sending your message. Please try again.');window.location.href='/'</script>`);
+    console.error(error);
+    res.json({ success: false, message: 'Sorry, there was an error sending your message. Please try again.' }); // <-- return JSON
   }
 });
 
@@ -47,3 +45,4 @@ app.post('/contact', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
