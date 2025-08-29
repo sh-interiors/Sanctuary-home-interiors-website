@@ -9,7 +9,7 @@
 body {
   font-family: 'Inter', sans-serif;
   color: #333;
-  background: #fff;
+  background: #bdbbbb;
   line-height: 1.6;
 }
 
@@ -18,14 +18,15 @@ body {
   left: 0;
   right: 0;
   top: 0; /* <-- Add this to ensure navbar is at the top */
-  background: rgba(255, 255, 255, 0.95);
+  background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  color:black;
+  font-family: 'Inter', sans-serif;
+  /*box-shadow: 0 2px 8px rgba(0,0,0,0.1);*/
 }
 
 .logo-container {
@@ -35,7 +36,7 @@ body {
 }
 
 .logo-container img {
-  height: 50px;
+  height: 60px;
   border-radius: 30px;
 }
 
@@ -71,7 +72,7 @@ header {
   text-align: center;
   background: url('images/header_background.jpg') center/cover no-repeat fixed;
   padding-top: 140px;
-  color:white;
+  color: black;
 }
 
 /* Move hero section elements up by 45px for better visual alignment */
@@ -196,6 +197,16 @@ footer {
 .footer-right i {
   color: #f4c430;
   margin-right: 0.5rem;
+}
+
+/* Add white color for links in footer section */
+.footer-right a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  color: #f4c430; /* gold hover */
 }
 
 /* Animations */
@@ -460,7 +471,7 @@ footer {
 .img-modal-close {
   display: none !important;
 }
-}
+.img-modal {
   z-index: 2000;
   left: 0;
   top: 0;
@@ -690,7 +701,18 @@ footer {
   #contact::before {
     height: 140px;
   }
+  header {
+    background: url('images/ca85044114c03d267aedc3a9dded71c9.jpg') center/cover no-repeat !important;
+    color: #222;
+  }
+  
 }
+@media (max-width: 600px) {
+  #contact {
+    background: url('images/18a501ba21cfd0bae54e873dba2686d8.jpg') center/cover no-repeat;
+    padding-bottom: 2em;
+  }
+
 
 /* Tablet styles */
 @media (max-width: 900px) {
@@ -718,47 +740,104 @@ footer {
 /* Mobile styles */
 @media (max-width: 600px) {
   .branding-navbar {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    padding: 1rem !important;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
-  .navbar ul,
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+    width: 100%;
+  }
+  .logo-container img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5em;
+    background: #fff;
+  }
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .navbar {
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-top: -5px;
+  }
   .nav-links {
-    flex-direction: column !important;
-    gap: 0.5rem !important;
-    width: 100% !important;
-    padding-top: 0.5rem !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1.2em;
+    /*padding: 0.5em 0; */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8em;
   }
-  .hero {
-    padding: 2rem 1rem 2rem 1rem !important;
+  .nav-links li {
+    list-style: none;
   }
-  .hero h1 {
-    font-size: 1.5rem !important;
+  .nav-links a {
+    color: #222;
+    text-decoration: none;
   }
-  .about-section,
-  #services,
-  #Gallery,
-  .contact-section {
-    padding: 1.5rem 0.5rem !important;
+
+  /* Home section */
+  #home .hero {
+    margin: 2em 0 0 0;
+    text-align: center;
+    padding: 0 1em;
+    height: -110px;
   }
-  .about-wrapper {
-    gap: 1rem !important;
+  #home .hero h1 {
+    font-size: 1.5em;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5em;
+    color:chocolate;
   }
-  .about-image img {
-    width: 100% !important;
-    max-width: 100% !important;
+  #home .hero p {
+    font-size: 1em;
+    margin-bottom: 1em;
   }
-  .why-cards,
-  .services-container {
-    gap: 1rem !important;
+  #home .hero .btn {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    font-size: 1em;
+    background: #f4c430;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+  
   }
-  .slider img {
-    height: 100px !important;
+  #home .hero {
+    margin-top: -100px;
   }
-  footer {
-    flex-direction: column !important;
-    padding: 1rem !important;
-    font-size: 0.95rem !important;
-  }
+
+  
+
+  
+
+.footer-right a {
+  color: #fff;
+  text-decoration: none;
 }
 
+.footer-right a:hover {
+  color: #f4c430; /* gold hover */
+}
+
+
+}}
