@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanctuary Home Interiors</title>
+  <title>SANCTUARY HOME INTERIORS</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/jpeg" href="images/sh logo.jpg" />
+  <link rel="icon" type="image/jpeg" href="images/logo.png" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet">
+  
 </head>
 <body>
   <!-- Navbar -->
   <div class="branding-navbar">
     <div class="logo-container">
-      <img src="images/sh logo.jpg" alt="Logo" />
-      <span class="brand-name">Sanctuary Home Interiors</span>
+      <img src="images/logo.png" alt="Logo" />
+      <span class="brand-name">SANCTUARY HOME INTERIORS</span>
     </div>
     <nav class="navbar">
       <ul class="nav-links">
@@ -24,7 +27,7 @@
         <li><a href="#Gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+    </nav> 
   </div>
 
   <!-- Hero Section -->
@@ -143,22 +146,38 @@
         <input type="text" id="mobile" name="mobile" placeholder="Your Mobile Number" required />
         <textarea id="message" name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
+        <div id="form-status"></div> <!-- Move this inside the form, below the button -->
       </form>
-      <div id="form-status"></div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="footer-left">
-      <p>&copy; 2025 Sanctuary Home Interiors. <br>All rights reserved.</p>
-    </div>
-    <div class="footer-right">
-      <p><i class="fas fa-user"></i> Sri Hari Pasula</p>
-      <p><i class="fas fa-phone"></i> 8919589844</p>
-      <p><i class="fas fa-envelope"></i> homeinteriorssanctuary@gmail.com</p>
-      <p><i class="fab fa-instagram"></i> sh._.interiors</p>
-    </div>
-  </footer>
+  <div class="footer-left">
+    <p>&copy; 2025 Sanctuary Home Interiors. <br>All rights reserved.</p>
+  </div>
+  <div class="footer-right">
+    <p><i class="fas fa-user"></i> Sri Hari Pasula</p>
+
+    <!-- Click-to-call -->
+    <p>
+      <i class="fas fa-phone"></i>
+      <a href="tel:+918919589844">8919589844</a>
+    </p>
+
+    <!-- Click-to-email -->
+    <p>
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:homeinteriorssanctuary@gmail.com">homeinteriorssanctuary@gmail.com</a>
+    </p>
+
+    <!-- Instagram profile -->
+    <p>
+      <i class="fab fa-instagram"></i>
+      <a href="https://www.instagram.com/sh._.interiors" target="_blank">sh._.interiors</a>
+    </p>
+  </div>
+</footer>
+
 </body>
 </html>
