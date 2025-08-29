@@ -4,12 +4,10 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const app = express();
-
-// Use Render's assigned PORT or default to 3000 locally
 const PORT = process.env.PORT || 3000;
 
-// ✅ Serve static files from "harry" (make sure this folder has index.html)
-app.use(express.static(path.join(__dirname, 'harry')));
+// ✅ Serve all static files in the repo root (index.html, style.css, script.js, images, etc.)
+app.use(express.static(path.join(__dirname)));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -43,7 +41,7 @@ app.post('/contact', async (req, res) => {
   }
 });
 
-// ✅ Catch-all route for SPA / frontend
+// ✅ Catch-all route: serve index.html for unknown routes
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
