@@ -45,10 +45,11 @@ app.post('/contact', async (req, res) => {
 
 // ✅ Catch-all route for SPA / frontend
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'harry', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
